@@ -1,9 +1,23 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
+describe "Naves Baliza" {
+    const nave1 = new NaveBaliza(color="rojo")
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+    /*method initialize(){
+        nave1.acelerar(30000)
+    }*/
+  test "description" {
+    nave1.irHaciaElSol()
+    nave1.acercarseUnPocoAlSol()
+    assert.equals(10, nave1.direccionRespectoAlSol())
   }
-
+  test "Nave Combate" {
+    const naveCombate = new NaveCombate()
+    naveCombate.emitirMensaje("Hola")
+    assert.that(naveCombate.emitioMensaje("Hola"))
+  }
+  test "Testeamos Errores" {
+    assert.throwsExceptionWithMessage("El valor debe estar entre 0 y 50000"
+    , {nave1.superViaje(80000)})
+  }
 }
